@@ -20,11 +20,6 @@ export const PhoonebookForm = ({ onCreateContact }) => {
     resetForm();
   };
 
-  // const StyledForm = styled(Form)`
-  //   display: flex;
-  //   flex-direction: column;
-  // `;
-
   return (
     <Formik
       initialValues={initialValues}

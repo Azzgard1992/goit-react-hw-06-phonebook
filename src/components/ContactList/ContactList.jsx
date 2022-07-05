@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
-import { Button, Item } from './ContactList.styled';
+import { ListItem } from 'components/ListItem/ListItem';
 
 export const ContactList = ({ onFilterContacts, onDeleteContact }) => {
   return (
     <ol>
       {onFilterContacts().map(({ name, number, id }) => (
-        <Item key={id}>
-          {name} : {number}
-          <Button type="button" onClick={() => onDeleteContact(id)}>
-            Delete
-          </Button>
-        </Item>
+        <ListItem
+          key={id}
+          name={name}
+          number={number}
+          onDeleteContact={onDeleteContact}
+        />
       ))}
     </ol>
   );
