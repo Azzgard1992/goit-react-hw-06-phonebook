@@ -19,31 +19,20 @@ export class App extends Component {
   };
 
   createContact = ({ name, number }) => {
+    const findContact = this.state.contacts.find(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
+
+    if (findContact) {
+      alert(`${name} is already in contact`);
+      return;
+    }
+
     const newContact = {
       id: nanoid(),
       name,
       number,
     };
-
-    for (const { name } of this.state.contacts) {
-      if (name.toLowerCase() === newContact.name.toLowerCase()) {
-        alert(`${newContact.name} is already in contact`);
-        return;
-      }
-    }
-
-    // this.state.contacts.find(({ name }) =>
-    //   name === newContact.name
-    //     ? alert(`${newContact.name} is already in contact`)
-    //     : alert(`sfsdfds!`)
-    // );
-
-    // this.state.contacts.find(({ name }) => {
-    //   if (name === newContact.name) {
-    //     alert(`${newContact.name} is already in contact`);
-    //     return;
-    //   }
-    // });
 
     this.setState(prevState => {
       return { contacts: [...prevState.contacts, newContact] };
@@ -69,7 +58,6 @@ export class App extends Component {
 
   render() {
     const { filter } = this.state;
-    console.log(this.state.contacts);
     return (
       <Box pt="4" width="container" mx="auto" as="main">
         <Title>Phoonebook</Title>
