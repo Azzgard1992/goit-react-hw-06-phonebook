@@ -37,7 +37,9 @@ export const PhoonebookForm = ({ onCreateContact }) => {
 
         <ErrorMessage name="number" component={ErrorText} />
 
-        <Button type="submit">Create contact</Button>
+        <Button type="submit" size="150">
+          Create contact
+        </Button>
       </StyledForm>
     </Formik>
   );

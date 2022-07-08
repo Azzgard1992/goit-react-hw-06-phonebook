@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
-import { Item, Button } from './ListItem.styled';
+import { Item, Text } from './ListItem.styled';
+import { Button } from 'components/Button/Button';
 
 export const ListItem = ({ name, number, onDeleteContact, id }) => {
   return (
     <Item>
-      {name} : {number}
-      <Button type="button" onClick={() => onDeleteContact(id)}>
+      <Text>
+        {name} : {number}
+      </Text>
+      <Button size="75" onClick={() => onDeleteContact(id)}>
         Delete
       </Button>
     </Item>
@@ -16,4 +19,5 @@ ListItem.propTypes = {
   name: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
   onDeleteContact: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
 };

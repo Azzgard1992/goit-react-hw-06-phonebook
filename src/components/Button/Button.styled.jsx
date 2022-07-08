@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const StyledButton = styled.button`
-  width: ${p => p.theme.sizes.button}px;
+  width: ${p => p.size}px;
   padding-top: ${p => p.theme.space[3]}px;
   padding-bottom: ${p => p.theme.space[3]}px;
   padding-right: ${p => p.theme.space[4]}px;
