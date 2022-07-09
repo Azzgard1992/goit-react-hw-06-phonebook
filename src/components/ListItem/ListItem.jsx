@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
-import { Item, Text } from './ListItem.styled';
-import { Button } from 'components/Button/Button';
+import { Button, Item, Text } from './ListItem.styled';
 
 export const ListItem = ({ name, number, onDeleteContact, id }) => {
   return (
@@ -8,9 +7,7 @@ export const ListItem = ({ name, number, onDeleteContact, id }) => {
       <Text>
         {name} : {number}
       </Text>
-      <Button size="75" onClick={() => onDeleteContact(id)}>
-        Delete
-      </Button>
+      <Button onClick={() => onDeleteContact(id)}>Delete</Button>
     </Item>
   );
 };
